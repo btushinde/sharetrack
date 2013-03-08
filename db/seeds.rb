@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
+puts 'hey!'
+
+Track.delete_all
+Track.create!(:title => "Track1", :url => "http://www.google.com")
