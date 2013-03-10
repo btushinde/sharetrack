@@ -1,21 +1,15 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+app = angular.module("Sharetrack", ["ngResource"])
 
+app.factory "Track", ["$resource", ($resource) ->
+  $resource("/tracks/:id", {id: "@id"}, {update: {method: "PUT"}})
+]
 
-
-@TrackCtrl = ($scope) ->
+@TrackCtrl = ["$scope", "Track", ($scope, Track) ->
+  $scope.tracks = Track.query()
   $scope.newTrack = {}
 
-  $scope.tracks = [
-    {title: "Track1", url: "http://"}
-    {title: "track2", url: "http://"}
-    {title: "tRACk ThreE", url: "htt://"}
-  ]
-
-
-  $scope.addTrack = () ->
-  	$scope.tracks.push $scope.newTrack
-  	$scope.newTrack = {}
-  	console.log $scope.newTrack
-
+  $scope.addTrack = ->
+   track = Track.save($scope.newTrack)
+   $scope.tracks.push $scope.newTrack
+   $scope.newTrack = {}
+]
