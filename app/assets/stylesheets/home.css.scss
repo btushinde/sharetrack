@@ -1,3 +1,38 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body{
+	padding: 10px;
+}
+
+
+#controls{
+	padding: 10px;
+	background: #dde8ff;
+
+}
+
+
+#tracks{ }
+
+.track{
+	display: block;
+	float: left;
+	margin: 0 15px 15px 0;
+	width: 130px;
+	height: 130px;
+	background: #e6e6e6;
+
+
+	.title{
+		display: inline-block;
+		width: 100%;
+		font-weight: bold;
+	}
+
+	.url{
+		font-variant: small-caps;
+	}
+}

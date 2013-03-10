@@ -17,4 +17,6 @@ A simple application for shareing new sounds from the internet.
 + MongoDB
 + Angular.js
 + CoffeeScript
++ SCSS
++ Zurb Foundation
 

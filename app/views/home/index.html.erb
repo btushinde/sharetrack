@@ -1,1 +1,32 @@
-index.html.erb
+<h1>sharetrack</h1>
+
+<div ng-controller="TrackCtrl" class="row">
+	<h1>{{newTrack.title}}</h1>
+
+	<section id="controls" class="large-3 columns">
+		<h3>add a track!</h3>
+		<form ng-submit="addTrack()">
+			<input type="text" ng-model="newTrack.title" placeholder="title" />
+			<p>{{newTrack.title}}</p>
+
+			<input type="text" ng-model="newTrack.url" placeholder="url" />
+			<p>{{newTrack.url}}</p>
+
+			<input type="submit" value="add" class="tiny button" />
+
+		</form>
+	</section>
+
+
+	<section id="tracks" class="large-8 columns">
+		<ul>
+		  <li class="track" ng-repeat="track in tracks">
+		    <span class="title">{{track.title}}</span>
+		    <span class="url">{{track.url}}</span>
+		  </li>
+		</ul>
+	</section>
+
+
+
+</div>
