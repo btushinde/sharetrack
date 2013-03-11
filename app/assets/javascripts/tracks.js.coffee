@@ -1,7 +1,7 @@
-app = angular.module("Sharetrack", ["ngResource"])
+app = angular.module("Sharetrack", ["ngResource", "ui"])
 
 app.factory "Track", ["$resource", ($resource) ->
-  $resource("/tracks/:id", {id: "@id"}, {update: {method: "PUT"}})
+  $resource("/tracks/:id", {id: "@_id"}, {update: {method: "PUT"}})
 ]
 
 @TrackCtrl = ["$scope", "Track", ($scope, Track) ->
@@ -19,18 +19,9 @@ app.factory "Track", ["$resource", ($resource) ->
    $scope.tracks.push $scope.newTrack
    $scope.newTrack = {}
 
-  $scope.removeTrack = (id) ->
-   $scope.log "remove"
-   $scope.log Track.remove {id: id}
-
-  $scope.getTrack = () ->
-   $scope.log Track.get()
-
-  $scope.getTracks = ->
-   $scope.tracks
-
-  $scope.hello = (id) ->
-   console.log $scope.getTracks()
-   $scope.log 'hello!'
-
+  $scope.removeTrack = (track) ->
+   $scope.tracks = _.filter($scope.tracks, (t) ->
+    t._id != track._id
+   )
+   track.$delete()
 ]

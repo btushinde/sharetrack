@@ -13,8 +13,8 @@
 
 	<section id="tracks" class="large-9 columns">
 		<ul>
-		  <li class="track panel" ng-repeat="track in tracks" >
-		  	<div class="foundicon-remove close" ng-click=""></div>
+		  <li class="track panel" ng-repeat="track in tracks">
+		  	<div class="foundicon-remove close" ng-click="removeTrack(track)"></div>
 		    <span class="title">{{track.title}}</span>
 		    <span class="url">{{track.url}}</span>
 		  </li>

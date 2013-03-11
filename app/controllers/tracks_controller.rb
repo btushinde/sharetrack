@@ -19,6 +19,7 @@ class TracksController < ApplicationController
 	end
 
 	def destroy
-		respond_with Track.destroy(params[:id])
+		@track = Track.find(params[:id])
+		respond_with @track.destroy
 	end
 end
