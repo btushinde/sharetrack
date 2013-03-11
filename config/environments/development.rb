@@ -29,6 +29,5 @@ Sharetrack::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  # Add the fonts path
-  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
 end

@@ -44,13 +44,19 @@ h1{
 		position: absolute;
 		top: 0;
 		right: 4px;
-		//display: none;
-		z-index: 10;
+		opacity: 0;
+		 -moz-transition: all 0.1s;
+		 -webkit-transition: all 0.1s;
+		 -ms-transition: all 0.1s;
+		 -o-transition: all 0.1s;
+		 transition: all 0.1s;
+
 	}
 
 	&:hover{
 		.close{
 			display: block;
+			opacity: 100;
 		}
 	}
 }

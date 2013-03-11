@@ -15,5 +15,6 @@
 //= require foundation
 //= require angular
 //= require angular-resource
+//= require angular-util
 //= require jquery.isotope.min
 //= require_tree .

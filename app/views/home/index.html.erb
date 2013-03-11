@@ -5,23 +5,20 @@
 	<section id="controls" class=" panel large-3 columns">
 		<h3>add a track!</h3>
 		<form ng-submit="addTrack()">
-			<input type="text" ng-model="newTrack.title" placeholder="title" />
-			<input type="text" ng-model="newTrack.url" placeholder="url" />
+			<input type="text" ng-model="newTrack.title" placeholder="title" required />
+			<input type="text" ng-model="newTrack.url" placeholder="url" required />
 			<input type="submit" value="add" class="small button" />
 		</form>
 	</section>
 
-
-	<section id="tracks" class="large-8 columns">
+	<section id="tracks" class="large-9 columns">
 		<ul>
-		  <li class="track" ng-repeat="track in tracks">
-		  	<span class="foundicon-remove close" ng-click="removeTrack({{track._id}})"></span>
+		  <li class="track panel" ng-repeat="track in tracks" >
+		  	<div class="foundicon-remove close" ng-click=""></div>
 		    <span class="title">{{track.title}}</span>
 		    <span class="url">{{track.url}}</span>
 		  </li>
 		</ul>
 	</section>
 
-
-
-</div>
+</div
