@@ -10,8 +10,6 @@ body{
 
 #controls{
 	padding: 10px;
-	background: #dde8ff;
-
 }
 
 h1{
@@ -22,13 +20,14 @@ h1{
 #tracks{ }
 
 .track{
+	position: relative;
 	display: block;
 	float: left;
 	margin: 0 15px 15px 0;
+	padding: 10px;
 	width: 130px;
 	height: 130px;
 	background: #e6e6e6;
-	padding: 10px;
 
 
 	.title{
@@ -40,4 +39,21 @@ h1{
 	.url{
 		font-variant: small-caps;
 	}
+
+	.close{
+		position: absolute;
+		top: 0;
+		right: 4px;
+		//display: none;
+		z-index: 10;
+	}
+
+	&:hover{
+		.close{
+			display: block;
+		}
+	}
 }
+
+
+

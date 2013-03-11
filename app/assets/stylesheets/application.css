@@ -11,5 +11,6 @@
  *= require_self
  *= require foundation
  *= require isotope
+ *= require foundation/general_foundicons
  *= require_tree .
  */

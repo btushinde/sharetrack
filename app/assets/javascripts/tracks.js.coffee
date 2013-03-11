@@ -12,4 +12,8 @@ app.factory "Track", ["$resource", ($resource) ->
    track = Track.save($scope.newTrack)
    $scope.tracks.push $scope.newTrack
    $scope.newTrack = {}
+
+   $scope.removeTrack = (id) ->
+   	console.log 'track'
+
 ]
